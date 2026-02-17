@@ -28,6 +28,26 @@
       "env": {
         "REACT_APP_CODESPACE_NAME": "${env:CODESPACE_NAME}"
       }
-    }
+    },
+    {
+      "name": "Run Django Server",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/octofit-tracker/backend/manage.py",
+      "args": [
+        "runserver",
+        "0.0.0.0:8000"
+      ],
+      "django": true,
+      "justMyCode": true,
+      "python": "${workspaceFolder}/octofit-tracker/backend/venv/bin/python",
+      "env": {
+        "CODESPACE_NAME": "${env:CODESPACE_NAME}",
+        "PYTHONPATH": "${workspaceFolder}/octofit-tracker/backend/venv/bin/python",
+        "VIRTUAL_ENV": "${workspaceFolder}/octofit-tracker/backend/venv",
+        "PATH": "${workspaceFolder}/octofit-tracker/backend/venv/bin:${env:PATH}"
+      },
+      "cwd": "${workspaceFolder}/octofit-tracker/backend"
+    },
   ]
 }
